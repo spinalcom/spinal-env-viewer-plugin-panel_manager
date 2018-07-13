@@ -2,6 +2,7 @@
 import Vue from "vue";
 import PanelManager from "./PanelManager";
 import panel from "./panel.vue";
+import EventBus from "./EventBus"
 
 const globalType = typeof window === "undefined" ? global : window;
 const spinalSystem = globalType.spinal.spinalSystem;
