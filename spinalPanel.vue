@@ -1,6 +1,6 @@
 
 <template>
-  <div class="panel">
+  <div class="spinalPanel">
     <md-button v-if="this.panel != null"
                class=" md-icon-button "
                @click="toggle">
@@ -15,7 +15,7 @@
 let globalType = typeof window === "undefined" ? global : window;
 
 export default {
-  name: "panel",
+  name: "spinalPanel",
   data() {
     return {
       panel: null,
@@ -33,16 +33,16 @@ export default {
           // this.panel.container.style.minHeight = "35px";
           // this.panel.container.style.height = "0px";
           // if (this.group != null && this.index != null) {
-          //   let panelGroup =
-          //     globalType.spinal.panelManager.panelsGroup[this.group];
+          //   let spinalPanelGroup =
+          //     globalType.spinal.spinalPanelManager.spinalPanelsGroup[this.group];
           //   let top = this.panel.container.style.top;
 
           //   for (
           //     let index = this.index + 1;
-          //     index < panelGroup.length;
+          //     index < spinalPanelGroup.length;
           //     index++
           //   ) {
-          //     const panel = panelGroup[index];
+          //     const panel = spinalPanelGroup[index];
           //     let newTop = "calc( 35px +" + top * index + " px )";
           //     panel.container.style.top = newTop;
           //     // panel.container.style.minHeight = "35px";
@@ -62,7 +62,7 @@ export default {
           this.panel.container.style.height = "35px";
         }
         if (this.panel.container.style.left < "10px")
-          globalType.spinal.panelManager.renderGroup(this.group);
+          globalType.spinal.spinalPanelManager.renderGroup(this.group);
       }
     },
     getEvents: function() {}
@@ -74,19 +74,22 @@ export default {
 </script>
 
 <style scoped>
-.panel {
+.spinalPanel * {
+  box-sizing: border-box;
+}
+.spinalPanel {
   position: absolute;
   top: 0px;
   right: 5%;
   padding-top: 7px;
 }
-.panel button.md-icon-button.md-button.md-theme-default {
+.spinalPanel button.md-icon-button.md-button.md-theme-default {
   min-width: 20px;
   width: 20px !important;
   height: 20px !important;
 }
 
-.panel i.md-icon.md-icon-font.md-theme-default {
+.spinalPanel i.md-icon.md-icon-font.md-theme-default {
   font-size: 20px !important;
 }
 </style>

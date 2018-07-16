@@ -1,8 +1,8 @@
 <script>
 import Vue from "vue";
 import PanelManager from "./PanelManager";
-import panel from "./panel.vue";
-import EventBus from "./EventBus"
+import spinalPanel from "./spinalPanel.vue";
+import EventBus from "./EventBus.vue"
 
 const globalType = typeof window === "undefined" ? global : window;
 const spinalSystem = globalType.spinal.spinalSystem;
@@ -13,7 +13,7 @@ const classExtention = class {
   constructor(viewer, options) {
     Autodesk.Viewing.Extension.call(this, viewer, options);
     this.viewer = viewer;
-    this.panelManager = new PanelManager(viewer, panel);
+    this.panelManager = new PanelManager(viewer, spinalPanel);
   }
   load() {
     globalType.spinal.panelManager = this.panelManager;
