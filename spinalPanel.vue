@@ -62,7 +62,7 @@ export default {
           this.panel.container.style.height = "35px";
         }
         if (this.panel.container.style.left < "10px")
-          globalType.spinal.spinalPanelManager.renderGroup(this.group);
+          globalType.spinal.panelManager.renderGroup(this.group);
       }
     },
     getEvents: function() {}
